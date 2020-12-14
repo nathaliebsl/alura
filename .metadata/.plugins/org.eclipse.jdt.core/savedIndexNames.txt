@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+/Users/nathaliebsl/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
+1748705151.index
+2775910871.index
+1748679790.index
+3249186665.index
+1943451760.index
