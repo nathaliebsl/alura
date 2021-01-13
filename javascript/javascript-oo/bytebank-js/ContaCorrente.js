@@ -9,4 +9,10 @@ export class ContaCorrente extends Conta {
         ContaCorrente.numeroDeContas += 1;
     }
 
+    //sobreescrevendo o comportamento do método abstato e protegido sacar da classe mãe.
+    sacar(valor){
+        let taxa = 1.1;
+        return super._sacar(valor, taxa);
+    }
+
 }
