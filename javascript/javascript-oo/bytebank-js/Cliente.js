@@ -11,7 +11,7 @@ export class Cliente {
         this._senha = senha;
     }
 
-    //interface autenticar que permite que o Cliente acesse o SistemaAutenticacao.js e seja autenticável
+    //funcao autenticar que permite que o Cliente acesse a interface SistemaAutenticacao.js e seja autenticável
     autenticar(senha){
         return senha == this._senha;
     }
