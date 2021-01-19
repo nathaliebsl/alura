@@ -1,4 +1,4 @@
-const executaQuery = require('../database/queries')
+const executaQuery = require('../database/queries.js')
 
 class Atendimento {
   lista(res) {
@@ -39,3 +39,4 @@ class Atendimento {
 }
 
 module.exports = new Atendimento
+

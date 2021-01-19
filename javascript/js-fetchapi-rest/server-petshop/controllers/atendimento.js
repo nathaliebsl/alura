@@ -1,4 +1,4 @@
-const Operations = require('../infraestrutura/operations')
+const Operations = require('../infraestrutura/operations.js')
 
 const Atendimentos = new Operations('atendimento')
 

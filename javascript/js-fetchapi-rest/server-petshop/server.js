@@ -1,5 +1,5 @@
-const customExpress = require("./config/custom-express");
-const Tabelas = require("./infraestrutura/database/tabelas");
+const customExpress = require("./config/custom-express.js");
+const Tabelas = require("./infraestrutura/database/tabelas.js");
 
 const app = customExpress();
 Tabelas.init();

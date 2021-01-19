@@ -1,4 +1,4 @@
-const executaQuery = require('../database/queries')
+const executaQuery = require('../database/queries.js')
 
 class Servico {
   lista(res) {

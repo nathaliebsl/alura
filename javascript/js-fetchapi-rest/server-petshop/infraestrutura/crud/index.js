@@ -1,7 +1,7 @@
-const atendimento = require('./atendimento')
-const cliente = require('./cliente')
-const pet = require('./pet')
-const servico = require('./servico')
+const atendimento = require('./atendimento.js')
+const cliente = require('./cliente.js')
+const pet = require('./pet.js')
+const servico = require('./servico.js')
 
 module.exports = {
   atendimento,
