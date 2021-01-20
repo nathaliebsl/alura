@@ -1,4 +1,4 @@
-const executaQuery = require('../database/queries.js')
+const executaQuery = require('../database/queries')
 
 class Pet {
   lista(res) {
