@@ -3,12 +3,17 @@ const formCadastraCliente = document.querySelector('[data-form]');
 formCadastraCliente.addEventListener("submit", event => {
     event.preventDefault();
 
-    const nome = event.target.querySelector('[data-nome]');
-    const cpf = event.target.querySelector('[data-cpf]');
+    const nome = event.target.querySelector('[data-nome]').value;
+    const cpf = event.target.querySelector('[data-cpf]').value;
 
-    cadastrarClientes(nome.value, cpf.value);
+    if(!validaCPF(cpf)) {
+        alert("O CPF informado não é válido");
+        formCadastraCliente.reset();
 
-    formCadastraCliente.reset();
+    } else {
+        cadastrarClientes(nome, cpf);
+        formCadastraCliente.reset();
+    }
 
 })
 
