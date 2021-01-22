@@ -1,11 +1,8 @@
-
-//  function Refresh() {
-//   window.parent.location = window.parent.location.href;
-// }
-
-const excluirCliente = id => {
+const excluirCliente = (id) => {
   if(confirm("Deseja excluir o cliente?")){
+    //debugger;
     deletaCliente(id);
+    window.location.reload();
   }
 }
 
@@ -13,6 +10,7 @@ const corpoTabela = document.querySelector("[data-conteudo-tabela]");
 
 const exibeCliente = (cpf, nome, id) => {
   const linha = document.createElement("tr");
+  
   const conteudoLinha = `
   <td>${ cpf }</td>
   <td>${ nome }</td>
