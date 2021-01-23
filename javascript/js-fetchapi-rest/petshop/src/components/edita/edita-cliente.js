@@ -3,7 +3,7 @@ const pegaURL = new URL(window.location);
 const id = pegaURL.searchParams.get('id');
 
 const inputCPF = document.querySelector('[data-cpf]');
-const inputNome = document.querySelector('[data-nome');
+const inputNome = document.querySelector('[data-nome]');
 
 // a funcao detalhaCliente retorna uma promise, e esta, quando resolvida(then..) passamos a arrow function dados
 detalhaCliente(id).then( dados => {
@@ -24,7 +24,7 @@ const alerta = (classe, mensagem) => {
     return linha;
 } 
 
-const editaForm = document.querySelector('[data-form');
+const editaForm = document.querySelector('[data-form]');
 
 editaForm.addEventListener('submit', event => {
     event.preventDefault();

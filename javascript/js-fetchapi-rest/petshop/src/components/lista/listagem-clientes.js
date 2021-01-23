@@ -1,3 +1,6 @@
+import {listarClientes, deletaCliente } from "../../api/cliente.js";
+import "../../assets/css/clientes.css";
+
 const excluirCliente = (id) => {
   if(confirm("Deseja excluir o cliente?")){
     deletaCliente(id);
@@ -16,7 +19,7 @@ const exibeCliente = (cpf, nome, id) => {
   
   <button type="button" class="btn btn-danger" onclick="excluirCliente(${id})">Excluir</button>
   
-  <a href="edita-clientes.html?id=${id}">
+  <a href="./components/edita/edita-clientes.html?id=${id}">
   <button type="button" class="btn btn-info">Editar</button>
   </a>
   `;
