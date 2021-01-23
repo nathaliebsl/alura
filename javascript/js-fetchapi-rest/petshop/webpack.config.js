@@ -9,8 +9,9 @@ module.exports = {
     },
     entry: "./src/components/lista/listagem-clientes.js",
     output: {
+        publicPath: '/',
         filename: "main.js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist"),
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -31,11 +32,12 @@ module.exports = {
             {
                 test: /\.png$/,
                 use: {
-                    loader: "file-loader",
-                    options: {
-                        name: "[name].[ext]"
-                    }
+                        loader: "file-loader",
+                        options: {
+                            name: "[name].[ext]"
+                        }   
                 }
+                   
             }
 
         ]
