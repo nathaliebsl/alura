@@ -1,19 +1,25 @@
-const formCadastraCliente = document.querySelector('[data-form]');
+import validaCPF from '../valida/valida-cpf.js';
+import { cadastrarClientes } from '../../api/cliente.js'
 
-formCadastraCliente.addEventListener("submit", event => {
-    event.preventDefault();
+const eventoEnvia = (form) => {
+    const formCadastraCliente = document.querySelector('[data-form]');
 
-    const nome = event.target.querySelector('[data-nome]').value;
-    const cpf = event.target.querySelector('[data-cpf]').value;
+    formCadastraCliente.addEventListener("submit", event => {
+        event.preventDefault();
 
-    if(!validaCPF(cpf)) {
-        alert("O CPF informado não é válido");
-        formCadastraCliente.reset();
+        const nome = event.target.querySelector('[data-nome]').value;
+        const cpf = event.target.querySelector('[data-cpf]').value;
 
-    } else {
-        cadastrarClientes(nome, cpf);
-        formCadastraCliente.reset();
-    }
+        if (!validaCPF(cpf)) {
+            alert("O CPF informado não é válido");
+            formCadastraCliente.reset();
 
-})
+        } else {
+            cadastrarClientes(nome, cpf);
+            formCadastraCliente.reset();
+        }
 
+    })
+}    
+
+export default eventoEnvia;
