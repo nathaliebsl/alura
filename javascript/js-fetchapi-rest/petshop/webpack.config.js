@@ -7,7 +7,7 @@ module.exports = {
         open: true,
         contentBase: "dist",
     },
-    entry: "./src/components/lista/listagem-clientes.js",
+    entry: "./src/main.js",
     output: {
         publicPath: '/',
         filename: "main.js",
