@@ -1,10 +1,12 @@
+import { editaCliente } from "./api/cliente.js";
 import inicializaCadastro from "./components/cadastro/componente-cadastro.js";
+import inicializaFormEdicao from "./components/edita/form-edicao.js";
 import inicializaTabela from "./components/lista/listagem-clientes.js";
 
 const rotas = {
     "/": inicializaTabela,
-    "/cadastro": inicializaCadastro
-    //"/clientes":
+    "/cadastro": inicializaCadastro,
+    "/edita": inicializaFormEdicao
     //"/pets":
 }
 

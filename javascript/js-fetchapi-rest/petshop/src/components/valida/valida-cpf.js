@@ -16,10 +16,10 @@ function validaCPF(cpf) {
 		cpf == "99999999999")
 			return false;		
 	// Valida 1o digito	- se o primeiro dígito verificador é válido de acordo com o algoritmo do CPF. Caso negativo, a validação já retorna false encerrando a função.
-	add = 0;	
-	for (i=0; i < 9; i ++)		
+	var add = 0;
+	for (var i=0; i < 9; i ++)		
 		add += parseInt(cpf.charAt(i)) * (10 - i);	
-		rev = 11 - (add % 11);	
+		var rev = 11 - (add % 11);	
 		if (rev == 10 || rev == 11)		
 			rev = 0;	
 		if (rev != parseInt(cpf.charAt(9)))		
