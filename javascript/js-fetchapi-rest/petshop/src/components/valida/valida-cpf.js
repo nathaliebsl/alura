@@ -38,3 +38,4 @@ function validaCPF(cpf) {
 }
 
 export default validaCPF;
+//tive que add "var" antes de add, i, & rev para poder compilar.

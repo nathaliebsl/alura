@@ -32,13 +32,10 @@ const eventoForm = form => {
     form.addEventListener('submit', event => {
         event.preventDefault();
 
-        //verificar se possivel deixar ambas verificacoes no mesmo if
         if (!validaCPF(inputCPF.value)) {
             alert("ESSE CPF NÃO EXISTE")
             return
         }
-//tem algum problema nesse if que etá dando erro na verificaçao
-
 
         if (inputCPF.value.length !== 11) {
             alert("ESSE CPF NÃO EXISTE")
