@@ -1,6 +1,6 @@
-import {listarClientes, deletaCliente } from "../../api/cliente.js";
+import { listarClientes, deletaCliente } from "../../api/cliente.js";
 import "../../assets/css/clientes.css";
-import inicializaCadastro from '../cadastro/componente-cadastro';
+import inicializaCadastro from '../cadastro/componente-cadastro.js';
 
 const excluirCliente = (id) => {
   if(confirm("Deseja excluir o cliente?")){
@@ -10,7 +10,8 @@ const excluirCliente = (id) => {
 }
 
 const conteudo = 
-` <thead class="thead-dark">
+` 
+<thead class="thead-dark">
     <tr>
       <th scope="col">CPF</th>
       <th scope="col">Nome</th>
@@ -21,12 +22,19 @@ const conteudo =
   </thead>
   `;
 
-const container = document.querySelector('[ data-container]');
-const tabela = document.createElement('table');
+const container = document.querySelector('[data-container]');
+const tabela = document.createElement("table");
 
 tabela.innerHTML = conteudo;
-tabela.classList.add('table');
+tabela.classList.add("table");
+
 container.appendChild(tabela);
+
+const novoCliente = document.querySelector('.btn');
+
+novoCliente.addEventListener('click', () => {
+  inicializaCadastro();
+});
 
 const corpoTabela = document.createElement('tbody');
 
@@ -42,10 +50,11 @@ const exibeCliente = (cpf, nome, id) => {
   <a href="./components/edita/edita-clientes.html?id=${id}">
   <button type="button" class="btn btn-info">Editar</button>
   </a>
-  `;
+  `
 
   linha.innerHTML = conteudoLinha;
   return linha;
+  
 };
 
 listarClientes().then( exibe => {

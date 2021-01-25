@@ -36,3 +36,5 @@ function validaCPF(cpf) {
         //Caso o algoritmo alcance a linha 37 temos um CPF válido e o boolean true é retornado.	
 	return true;   
 }
+
+export default validaCPF;
