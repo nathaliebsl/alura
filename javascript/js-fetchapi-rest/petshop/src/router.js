@@ -22,4 +22,10 @@ const navegacao = pathname => {
     rootDiv.appendChild(iniciarRota());
 }
 
+window.navegacao = navegacao;
+window.onpopstate = () => {
+    rootDiv.innerHTML = "";
+    rootDiv.appendChild(rotas[window.location.pathname]());
+}
+
 export { navegacao }
