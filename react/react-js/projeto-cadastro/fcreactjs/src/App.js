@@ -2,7 +2,7 @@ import { Container, Typography } from "@material-ui/core";
 import "fontsource-roboto";
 import React, { Component } from "react";
 import "./App.css";
-import FormularioCadastro from "./components/FormularioCadastro/FormularioCadastro";
+import {FormularioCadastro} from "./components/FormularioCadastro"
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
         <Typography variant="h3" component="h1" align="center">
           Formulario de Cadastro
         </Typography>
-        <FormularioCadastro 
+        <FormularioCadastro
         aoEnviar={aoEnviarForm}
         validarCPF={validarCPF}
          />
