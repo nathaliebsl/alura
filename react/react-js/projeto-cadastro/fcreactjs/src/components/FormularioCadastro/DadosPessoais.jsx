@@ -1,19 +1,37 @@
 import React, { useState } from "react";
 import { Button, TextField, Switch, FormControlLabel } from "@material-ui/core";
 
-function DadosPessoais({aoEnviar, validarCPF}) {
+function DadosPessoais({ aoEnviar, validacoes }) {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCPF] = useState("");
   const [promocoes, setPromo] = useState(true);
   const [novidades, setNews] = useState(true);
-  const [erros, setErros] = useState({cpf:{valido:true, texto:""}})
+  const [erros, setErros] = useState({ cpf: { valido: true, texto: "" } });
+
+  function validarCampos(event) {
+    const { name, value } = event.target;
+    const novoEstado = { ...erros };
+    novoEstado[name] = validacoes[name](value);
+    setErros(novoEstado);
+  }
+
+  function possoEnviar() {
+    for (let campo in erros) {
+      if (!erros[campo].valido) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        aoEnviar({nome, sobrenome, cpf, promocoes, novidades});
+        if (possoEnviar()) {
+          aoEnviar({ nome, sobrenome, cpf, promocoes, novidades });
+        }
       }}
     >
       <TextField
@@ -22,6 +40,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
           setNome(event.target.value);
         }}
         required
+        name="nome"
         id="nome"
         label="Nome"
         variant="outlined"
@@ -35,6 +54,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
           setSobrenome(event.target.value);
         }}
         required
+        name="sobrenome"
         id="sobrenome"
         label="Sobrenome"
         variant="outlined"
@@ -47,10 +67,8 @@ function DadosPessoais({aoEnviar, validarCPF}) {
         onChange={(event) => {
           setCPF(event.target.value);
         }}
-        onBlur={(event) => {
-            const validandoCPF = validarCPF(cpf);
-            setErros({cpf:validandoCPF})
-        }}
+        onBlur={validarCampos}
+        name="cpf"
         error={!erros.cpf.valido}
         helperText={erros.cpf.texto}
         required
@@ -87,7 +105,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
       />
 
       <Button type="submit" variant="contained" color="secondary">
-        Cadastrar
+        Próximo
       </Button>
     </form>
   );

@@ -9,13 +9,19 @@ function DadosDeEntrega({ aoEnviar }) {
   const [cidade, setCidade] = useState("");
 
   return (
-    <form>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        aoEnviar({ cep, endereco, numero, estado, cidade });
+      }}
+    >
       <TextField
         value={cep}
         onChange={(event) => {
           setCEP(event.target.value);
         }}
         required
+        name="cep"
         id="cep"
         label="CEP"
         type="number"
@@ -30,6 +36,7 @@ function DadosDeEntrega({ aoEnviar }) {
           setEndereco(event.target.value);
         }}
         required
+        name="endereco"
         id="endereco"
         label="Endereço"
         type="address"
@@ -44,6 +51,7 @@ function DadosDeEntrega({ aoEnviar }) {
           setNumero(event.target.value);
         }}
         required
+        name="numero"
         id="numero"
         label="Número"
         type="number"
@@ -57,6 +65,7 @@ function DadosDeEntrega({ aoEnviar }) {
           setEstado(event.target.value);
         }}
         required
+        name="estado"
         id="estado"
         label="Estado"
         type="text"
@@ -70,6 +79,7 @@ function DadosDeEntrega({ aoEnviar }) {
           setCidade(event.target.value);
         }}
         required
+        name="cidade"
         id="cidade"
         label="Cidade"
         type="text"
