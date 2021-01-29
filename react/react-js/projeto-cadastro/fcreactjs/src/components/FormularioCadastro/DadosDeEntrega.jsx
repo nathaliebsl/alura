@@ -16,7 +16,7 @@ function DadosDeEntrega() {
       <TextField
         id="endereco"
         label="Endereço"
-        type="text"
+        type="address"
         variant="outlined"
         margin="normal"
         fullWidth
